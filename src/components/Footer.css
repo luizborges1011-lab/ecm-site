@@ -1,0 +1,117 @@
+.footer {
+    background-color: #050a15;
+    /* Even darker, almost black navy */
+    color: var(--text-dark-secondary);
+    padding-top: 6rem;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr;
+    gap: 5rem;
+    margin-bottom: 5rem;
+}
+
+.footer-brand .footer-logo {
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer .logo-image {
+    width: 48px;
+    /* Make logo slightly larger */
+    height: 48px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+}
+
+.footer .logo-text strong {
+    font-size: 1.5rem;
+    /* Make ECM stand out more */
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.footer-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 450px;
+    color: #a3bac6;
+    /* Soft blue-grey for better readability against dark */
+}
+
+.footer-title {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.contact-list,
+.links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #a3bac6;
+}
+
+.contact-icon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 3px;
+    opacity: 0.9;
+}
+
+.links-list a {
+    font-size: 1rem;
+    color: #a3bac6;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.links-list a:hover {
+    color: white;
+    transform: translateX(5px);
+    /* Add a subtle interaction */
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(163, 186, 198, 0.7);
+    background-color: #030712;
+    /* Distinct slightly darker bottom bar */
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}

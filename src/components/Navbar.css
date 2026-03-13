@@ -1,0 +1,137 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 1.5rem 0;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-image {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text strong {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: var(--text-light-primary);
+}
+
+.navbar:not(.scrolled) .logo-text strong {
+    color: white;
+    /* Default for dark mode header */
+}
+
+.logo-text span {
+    font-size: 0.7rem;
+    color: var(--text-light-secondary);
+    letter-spacing: 0.05em;
+}
+
+.navbar:not(.scrolled) .logo-text span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: white;
+    transition: color 0.2s;
+}
+
+.navbar.scrolled .nav-links a {
+    color: var(--text-light-secondary);
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+.navbar:not(.scrolled) .nav-links a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.mobile-menu-btn {
+    display: none;
+    color: white;
+}
+
+.navbar.scrolled .mobile-menu-btn {
+    color: var(--text-light-primary);
+}
+
+.highlight-link {
+    background-color: rgba(33, 92, 249, 0.15);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(33, 92, 249, 0.3);
+}
+
+.navbar.scrolled .highlight-link {
+    color: var(--color-primary) !important;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        box-shadow: var(--shadow-md);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links.open {
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        color: var(--text-light-primary) !important;
+        font-size: 1.1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}
