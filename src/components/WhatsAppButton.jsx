@@ -1,7 +1,7 @@
 import './WhatsAppButton.css';
 
 const WhatsAppButton = () => {
-    const phoneNumber = "5546984082984";
+    const phoneNumber = "5546984045205";
     const message = "Gostaria de controlar a contabilidade da minha empresa com o ECM";
     const wppLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
